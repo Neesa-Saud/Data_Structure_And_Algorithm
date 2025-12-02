@@ -1,0 +1,20 @@
+class Solution {
+public:
+    int removeDuplicates(vector<int>& nums) {
+        if(nums.size()==0) return 0;
+        int count = 1;
+        for(int i=1;i<nums.size();i++)
+        {
+           if(nums[i]==nums[i-1]) //yaeta  i lae i+1 sanga compare garya vaye last maa size maa pani out of bound hunthyo
+           {
+             continue;
+           }
+           else 
+           {
+            nums[count] = nums[i];
+            count ++;
+           }
+        }
+        return count;
+    }
+};
